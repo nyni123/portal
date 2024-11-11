@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color-blue: #0f172a;
+  --primary-color-green: #052e16;
+}
+
+body {
+  @apply bg-primary
+}
+
+.bg-primary {
+  background-color: var(--primary-color-blue);
+}
+
+.text-primary {
+  color: var(--primary-color-blue);
+}
+
+.pattern-bg {
+  position: absolute;
+  opacity: 0.2;
+  background: radial-gradient(circle, transparent 20%, var(--primary-color-blue) 20%, var(--primary-color-blue) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--primary-color-blue) 20%, var(--primary-color-blue) 80%, transparent 80%, transparent) 10px 10px, linear-gradient(black 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, black 0.8px, var(--primary-color-blue) 0.8px) -0.4px 0;
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+}
+
+
+.logo {
+  aspect-ratio: 3/1;
+  object-fit: cover;
+  mix-blend-mode: darken;
+}
+
+.table-wrapper {
+  td {
+    border: 1px solid #999;
+  }
+}
+
+.link-text {
+  color: var(--primary-color-blue);
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+
+.threat-actor-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color-blue);
+}
+
+.threat-actor-card::before {
+  content: "";
+  background-image: url('./assets/apt_bg.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.08;
+  background-position-y: -300px;
+}
+
+.content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.title {
+  font-size: 24px;
+  color: #00df9a;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+}
+
+.card {
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+}
+
+.card-image {
+  --s: 25px;
+  --t: 5px;
+  --g: 20px;
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid #FFFFFF;
+  outline-offset: calc(-1 * var(--t));
+  -webkit-mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000, #FFFFFF 0%, #FFFFFF 0%, #FFFFFF 0%) content-box;
+  mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000, #FFFFFF 0%, #FFFFFF 0%, #FFFFFF 0%) content-box;
+  transition: 0.4s;
+  max-width: 200px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  color: #f05b72;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.card-origin {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card-origin .label {
+  font-weight: bold;
+  color: #9e9ea7;
+}
+
+.card-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cfcfd9;
+  text-align: justify;
+}
+
+.cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cta-link {
+  color: #00df9a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-link:hover .card-image {
+  outline-offset: -15px;
+}
+
+.apt-filter {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 15px;
+  padding-top: 50px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+}
+
+.filter-item label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.info-icon {
+  font-size: 12px;
+  margin-left: 5px;
+  color: #777;
+}
+
+.filter-item input,
+.filter-item select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.search-button {
+  background-color: #00df9a;
+  color: black;
+  padding: 11px 25px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.search-button .search-icon {
+  margin-right: 5px;
+}
+
+.search-button:hover {
+  background-color: #00df9a;
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+
+.shodan-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.shodan-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary-color-blue);
+  height: 250px;
+}
+
+.map-image {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.shodan-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.general-info,
+.open-ports,
+.web-technologies,
+.vulnerabilities,
+.apt-general-info,
+.links-sec {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  line-height: 2.5;
+  flex: 1;
+  margin-right: 10px;
+  margin-left: 10px;
+  -webkit-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  -moz-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.apt-general-info{
+  border: 0px;
+  box-shadow: none;
+}
+
+.general-info{
+  border-top: 2px solid green;
+}
+
+.open-ports{
+  border-top: 2px solid maroon;
+}
+
+.vulnerabilities{
+  border-top: 2px solid orange;
+}
+
+.web-technologies{
+  border-top: 2px solid blue;
+}
+
+.links-sec{
+  border-top: 2px solid blueviolet;
+}
+
+.ports-list,
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.port,
+.tech-item {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.vulnerabilities ul {
+  list-style-type: disc;
+  padding-left: 15px;
+}
+
+.vulnerabilities li {
+  margin-bottom: 10px;
+}
+
+.apt-header{
+  background-color: var(--primary-color-blue);
+  color: white;
+}
+
+.card-2{
+  -webkit-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  -moz-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  cursor: pointer;
+}
