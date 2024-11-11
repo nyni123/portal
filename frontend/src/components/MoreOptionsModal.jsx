@@ -27,7 +27,7 @@ const MoreOptionsModal = forwardRef(function MoreOptionsModal({}, ref) {
       className="w-32 h-8 mr-10 top-16 left-auto shadow-md shadow-black rounded-lg bg-gray-800"
     >
       <div className="flex flex-col h-full justify-center">
-        <button className="font-bold text-lg text-white" onClick={handleLogout}>
+        <button className="font-bold text-lg text-white flex items-center justify-center" onClick={handleLogout}  style={{ height: '100%' }}>
           {isLoading ? <div style={loaderStyle}></div> : 'Logout'}
         </button>
       </div>
