@@ -1,0 +1,74 @@
+.pulses-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 1.8em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .feed-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .feed-table th, .feed-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .feed-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .feed-table .thumbnail-img {
+    width: 80px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .feed-row:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .feed-title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .feed-title:hover {
+    text-decoration: underline;
+  }
+  
+  .feed-time {
+    font-size: 0.8em;
+    color: #888;
+  }
+  
+  .feed-source {
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .feed-description {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.4em;
+  }
+  

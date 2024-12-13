@@ -9,6 +9,7 @@ import { connectToVendorDB } from './config/db.js';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 import authRoutes from './routes/authRoutes.js';
+import axios from 'axios';
 
 
 
@@ -34,6 +35,24 @@ app.use('/getapt', aptRoutes);
 app.use('/getparams',paramsRoutes);
 app.use('/test',vendorRoutes);
 app.use('/api', authRoutes);
+
+// NewsAPI Proxy Route
+app.get('/api/pulses', async (req, res) => {
+  console.log('here');
+  try {
+    const response = await axios.get('https://newsapi.org/v2/top-headlines', {
+      params: {
+        sources: 'techcrunch',
+        apiKey: '6e0f48a20adc45b48eb9ee5f89d90476', // Use your API key here
+      },
+    });
+    console.log(response);
+    res.json(response.data); // Forward the NewsAPI response to the client
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 app.use(errorHandler);
 app.get('*', (req, res) => {
